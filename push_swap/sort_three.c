@@ -1,7 +1,7 @@
 #include "push_swap.c"
 #include "take_input.c"
 
-void	sort_3(t_list **stack_a)
+void	sort_three(t_list **stack_a)
 {
 	int	a[3];
 
@@ -25,7 +25,7 @@ void	sort_3(t_list **stack_a)
 		ft_swap_first(stack_a);
 	}
 }
-
+/*
 int	find_min_position(t_list *head)
 {
 	int	data;
@@ -75,7 +75,7 @@ void	sort(t_list **a, t_list **b)
 				ft_reverse_rotate(a);
 				ft_put_position(*a);
 			}
-			ft_push(a,b);
+			ft_push(b,a);
 	
 		}
 		else if (pos <= size / 2 )
@@ -85,7 +85,7 @@ void	sort(t_list **a, t_list **b)
 				ft_stack_rotate(a);
 				ft_put_position(*a);
 			}
-			ft_push(a,b);
+			ft_push(b,a);
 		}
 		size = ft_lstsize(*a);
 		ft_put_position(*a);
@@ -95,7 +95,7 @@ void	sort(t_list **a, t_list **b)
 		ft_push(a, b);
 	ft_put_position(*a);
 }
-
+*/
 int main(int argc, char **argv)
 {
 	t_list	*stack_a = NULL;
@@ -112,7 +112,7 @@ int main(int argc, char **argv)
 	//while (i > 50)
 	//	ft_lstadd_front(&stack_b,ft_lstnew(i--));
 	// i = 0;
-	//print(stack_a,"a");
+	print(stack_a,"a");
 	// print(stack_b,"b");
 	// ft_swap_first(&stack_a);
 	// print(stack_a,"a");

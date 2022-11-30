@@ -5,12 +5,16 @@ typedef struct s_list
 {
 	int				data;
 	int				position;
+	int				sort_index;
 	struct s_list	*next;
+	struct s_list	*prev;
 } t_list;
 
 void	ft_lstadd_front(t_list **head, t_list *node)
 {
 		node->next = *head;
+		if(*head)
+			(*head)->prev = node;
 		*head = node;
 }
 
@@ -34,6 +38,7 @@ t_list	*ft_lstnew(int data)
 	node = malloc(sizeof(t_list));
 	node->data = data;
 	node->next = NULL;
+	node->prev = NULL;
 	return (node);
 }
 
@@ -152,7 +157,7 @@ void	print(t_list *stack, char *a)
 		printf("stack %s : \n",a);
 	while (t)
 	{
-		printf("data = %d position = %d\n",t->data,t->position);
+		printf("data = %d position = %d sort_index = %d\n", t->data, t->position, t->sort_index);
 		t = t->next;
 	}
 	printf("\n");

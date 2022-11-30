@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <stdlib.h>
-//#include "push_swap.c"
+#include "push_swap.c"
 long long ft_atol(char *str)
 {
 	long long	answer;
