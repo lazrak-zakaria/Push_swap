@@ -2,7 +2,15 @@
 #include <unistd.h>
 #include <limits.h>
 #include <stdlib.h>
-#include "push_swap.c"
+typedef struct s_list
+{
+	int	data;
+	int	position;
+	int	sort_index;
+	struct s_list *next;
+	struct s_list *prev;
+} t_list;
+
 long long ft_atol(char *str)
 {
 	long long	answer;
