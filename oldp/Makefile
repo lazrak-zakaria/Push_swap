@@ -1,7 +1,7 @@
 NAME = push_swap
 CC = cc
 CFLAGS = -Wall -Werror -Wextra
-objs = ft_list.o input.o main.o sort.o libft.o operations.o sort_utils.o sort_utils2.o
+objs = ft_list.o input.o main.o sort.o libft.o operations.o sort_utils.o
 
 all : $(NAME)
 

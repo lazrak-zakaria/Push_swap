@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 18:00:45 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/12/20 13:20:07 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/12/19 08:30:05 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ typedef struct s_utils
 	t_list	*head;
 	t_list	*tail;
 }	t_utils;
-void	ft_b_to_a_util(t_list **stack_b, t_list *max);
-void	ft_b_to_a_util2(t_list **stack_b, t_list *max);
-
+void	ft_b_to_a(t_list **stack_a, t_list **stack_b);
 t_list	*find_sec_max(t_list *stack);
 t_list	*find_max(t_list *stack);
 /*____input____*/
@@ -69,7 +67,7 @@ t_list		*find_next_min(t_list *head);
 void		ft_sort_index(t_list *stack);
 void		ft_sort(t_list **stack_a, t_list **stack_b);
 void		ft_from_a_to_b(t_list **a, t_list **b, int n, t_utils u);
-void		ft_from_b_to_a(t_list **stack_a, t_list **stack_b);
+void		ft_from_b_to_a(t_list **stack_a, t_list **stack_b, t_utils utils);
 void		ft_sort_small_range(t_list **stack_a, t_list **stack_b);
 int			ft_is_sorted(t_list *stack);
 
