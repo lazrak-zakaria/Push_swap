@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:56:09 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/12/21 19:41:50 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/12/21 19:59:56 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac == 1)
-		exit(EXIT_SUCCESS);
 	to_stack_a(ac, av, &stack_a);
 	if (!stack_a)
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	ft_sort_index(stack_a);
 	if (ft_lstsize(stack_a) < 2 || ft_is_sorted(stack_a))
 		exit(EXIT_SUCCESS);
