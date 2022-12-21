@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:56:09 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/12/21 14:45:12 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/12/20 16:51:14 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac == 1)
-		exit(EXIT_SUCCESS);
 	to_stack_a(ac, av, &stack_a);
 	if (!stack_a)
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	ft_sort_index(stack_a);
 	if (ft_lstsize(stack_a) < 2 || ft_is_sorted(stack_a))
 		exit(EXIT_SUCCESS);
@@ -38,6 +36,8 @@ int	main(int ac, char **av)
 		ft_sort_small_range(&stack_a, &stack_b);
 	else
 		ft_sort(&stack_a, &stack_b);
+	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
 	exit(EXIT_SUCCESS);
 }
 	/*system("leaks push_swap");*/
