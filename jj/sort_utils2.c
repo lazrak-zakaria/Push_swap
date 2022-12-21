@@ -1,23 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   sort_utils2.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/20 16:42:16 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/12/20 16:49:22 by zlazrak          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "push_swap.h"
 
 t_list	*find_max(t_list *stack)
 {
-	t_list	*node;
+	t_list *node;
 
 	node = stack;
-	while (stack)
+	while(stack)
 	{
 		if (stack->data > node->data)
 			node = stack;
@@ -28,18 +16,18 @@ t_list	*find_max(t_list *stack)
 
 t_list	*find_sec_max(t_list *stack)
 {
-	t_list	*max;
-	t_list	*node;
+	t_list *max;
+	t_list *node;
 
 	max = find_max(stack);
 	if (ft_lstsize(stack) == 1)
-		return (max);
+		return max;
 	while (stack)
 	{
 		if (stack != max)
 		{
 			node = stack;
-			break ;
+			break;
 		}
 		stack = stack->next;
 	}
@@ -49,7 +37,7 @@ t_list	*find_sec_max(t_list *stack)
 			node = stack;
 		stack = stack->next;
 	}
-	return (node);
+	return node;
 }
 
 void	ft_from_b_to_a(t_list **stack_a, t_list **stack_b)
@@ -67,7 +55,7 @@ void	ft_from_b_to_a(t_list **stack_a, t_list **stack_b)
 			ft_b_to_a_util(stack_b, max);
 			f = 0;
 		}
-		else
+		else 
 		{
 			ft_b_to_a_util2(stack_b, max);
 			f = 1;
@@ -80,10 +68,11 @@ void	ft_from_b_to_a(t_list **stack_a, t_list **stack_b)
 	}
 }
 
+
 void	ft_b_to_a_util(t_list **stack_b, t_list *max)
 {
 	t_list	*mx2;
-	t_utils	utils;
+	t_utils utils;
 
 	mx2 = find_sec_max(*stack_b);
 	utils.head = *stack_b;
@@ -91,22 +80,21 @@ void	ft_b_to_a_util(t_list **stack_b, t_list *max)
 	while (utils.head)
 	{
 		if (utils.head == max || utils.head == mx2)
-			break ;
+			break; 
 		utils.head = utils.head->next;
 	}
-	while (utils.tail)
+	while (utils.tail )
 	{
 		if (utils.tail == max || utils.tail == mx2)
-			break ;
+			break;
 		utils.tail = utils.tail->prev;
 	}
-	if (utils.head->position - (*stack_b)->position
-		<= (ft_lstlast(*stack_b))->position - utils.tail->position)
+	if (utils.head->position - (*stack_b)->position <= (ft_lstlast(*stack_b))->position - utils.tail->position)
 		while (*stack_b != utils.head)
-			ft_rotate(stack_b, 'b');
-	else
-		while (*stack_b != utils.tail)
-			ft_reverse_rotate(stack_b, 'b');
+					ft_rotate(stack_b, 'b');
+		else
+			while (*stack_b != utils.tail)
+				ft_reverse_rotate(stack_b, 'b');
 }
 
 void	ft_b_to_a_util2(t_list **stack_b, t_list *max)

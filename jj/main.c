@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:56:09 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/12/20 16:51:14 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/12/09 16:15:25 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ int	main(int ac, char **av)
 	ft_lstclear(&stack_b);
 	exit(EXIT_SUCCESS);
 }
-	/*system("leaks push_swap");*/

@@ -6,12 +6,12 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 17:53:46 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/12/20 16:49:59 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/12/20 13:20:37 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+#include <stdio.h>
 void	ft_sort_three(t_list **stack, char s)
 {
 	int	a[3];
@@ -65,6 +65,33 @@ void	ft_from_a_to_b(t_list **stack_a, t_list **stack_b, int n, t_utils utils)
 		utils.end += utils.size;
 	}	
 }
+/*
+void	ft_from_b_to_a(t_list **stack_a, t_list **stack_b, t_utils utils)
+{
+	t_list	*node;
+
+	while (*stack_b)
+	{
+		ft_put_position(*stack_b);
+		utils.head = *stack_b;
+		node = *stack_b;
+		while (utils.head)
+		{
+			if (node->data < utils.head->data)
+				node = utils.head;
+			utils.head = utils.head->next;
+		}
+		if (node->position <= ft_lstsize(*stack_b) / 2)
+			while (*stack_b != node)
+				ft_rotate(stack_b, 'b');
+		else
+			while (*stack_b != node)
+				ft_reverse_rotate(stack_b, 'b');
+		ft_push(stack_a, stack_b, 'a');
+	}
+}
+*/
+
 
 void	ft_sort(t_list **stack_a, t_list **stack_b)
 {
@@ -83,6 +110,7 @@ void	ft_sort(t_list **stack_a, t_list **stack_b)
 	ft_bzero(&utils, sizeof(t_utils));
 	ft_from_a_to_b(stack_a, stack_b, n, utils);
 	ft_from_b_to_a(stack_a, stack_b);
+
 }
 
 void	ft_sort_small_range(t_list **stack_a, t_list **stack_b)
