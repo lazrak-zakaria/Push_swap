@@ -6,7 +6,7 @@
 /*   By: zlazrak <zlazrak@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/23 11:33:55 by zlazrak           #+#    #+#             */
-/*   Updated: 2022/12/23 11:38:34 by zlazrak          ###   ########.fr       */
+/*   Updated: 2022/12/24 10:23:19 by zlazrak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,7 @@ void	ft_from_b_to_a(t_list **stack_a, t_list **stack_b);
 void	ft_sort_three(t_list **stack, char s);
 void	ft_sort(t_list **stack_a, t_list **stack_b);
 void	ft_sort_small(t_list **stack_a, t_list **stack_b);
+
+void	ft_print_error(t_list **stack_a);
+
 #endif
